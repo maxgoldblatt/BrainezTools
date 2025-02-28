@@ -7,6 +7,9 @@ Key Features Include:
   
 <img width="377" alt="Screenshot 2025-02-28 161331" src="https://github.com/user-attachments/assets/e5facff9-1172-40f7-9788-7814779bf30b" />
 
+# Usage
+ - Complete Installation
+
 # Requirements:
 Blender 4.0+
 
