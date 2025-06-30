@@ -1,5 +1,6 @@
 import bpy
 
+"""Defines Custom Camera Preset w/ limits & paserpout enabled. Can Access via Shift A > Add Menu > Brainez Camera"""
 
 def create_custom_cam(self, context):
     """Creates Custom Camera with passepartout presets @ Viewport location"""
@@ -34,7 +35,6 @@ def create_custom_cam(self, context):
     bpy.ops.view3d.camera_to_view()
 
 
-
 class OBJECT_OT_AddCustomCam(bpy.types.Operator):
     """Class for Creating Custom Camera w/ Passapout enabled and @ current location"""
     bl_idname = "object.add_custom_camera"
@@ -46,23 +46,21 @@ class OBJECT_OT_AddCustomCam(bpy.types.Operator):
     def execute(self, context):
         create_custom_cam(self, context)
         return {'FINISHED'}
-    
-# Registration
 
+ 
+# Registration
 def add_camera_button(self, context):
     self.layout.operator(
         OBJECT_OT_AddCustomCam.bl_idname,
         text="Brainez Camera",
         icon='VIEW_CAMERA')
 
+
 def register():
     bpy.utils.register_class(OBJECT_OT_AddCustomCam)
     bpy.types.VIEW3D_MT_add.append(add_camera_button)
 
+
 def unregister():
     bpy.utils.unregister_class(OBJECT_OT_AddCustomCam)
     bpy.types.VIEW3D_MT_add.remove(add_camera_button)
-
-
-if __name__ == "__main__":
-    register()
